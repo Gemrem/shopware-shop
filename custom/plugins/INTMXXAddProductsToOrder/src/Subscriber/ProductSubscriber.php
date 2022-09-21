@@ -5,6 +5,8 @@ namespace INTMXX\Subscriber;
 use Shopware\Core\Framework\DataAbstractionLayer\Event\EntityLoadedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Shopware\Storefront\Page\Product\ProductPageLoadedEvent;
+use Shopware\Storefront\Page\Product\ProductPageLoader;
+
 class ProductSubscriber implements EventSubscriberInterface
 {
     public static function getSubscribedEvents(): array
@@ -15,10 +17,8 @@ class ProductSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function onProductPageLoaded(EntityLoadedEvent $event)
+    public function onProductPageLoaded(ProductPageLoadedEvent $event)
     {
-        echo "<pre>";
-        print_r($event);
-        echo "</pre>";  
+        print_r("Hello, World!\nProductId:{$event->getPage()->getProduct()->id}");
     }
 }
