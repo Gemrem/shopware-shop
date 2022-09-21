@@ -1,0 +1,18 @@
+{
+	"name": "intmxx/products-to-order",
+	"description": "Add product to order when entering product page",
+	"type": "shopware-platform-plugin",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"INTMXX\\": "src/"
+		}
+	},
+	"extra": {
+		"shopware-plugin-class": "INTMXX\\Base",
+		"label": {
+			"de-DE": "Products to order",
+			"en-GB": "Products to order"
+		}
+	}
+}
